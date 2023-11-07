@@ -1,0 +1,61 @@
+'use client';
+import React from "react";
+import Header from "../header";
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import Image from 'next/image';
+
+const politicalList = [
+    {id:0, date:'12/26', title:'參與台北寵物論壇，爭取貓咪友善環境', content:'炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的 VIP 休憩空間。', imageUri:'/image/political1.jpeg'},
+    {id:1, date:'12/24', title:'掃街模式開啟！帶著你的貓耳，來和我一起走！', content:'街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！這次的活動不僅讓我看到大家的熱情，更加堅定了我推進「貓咪友善環境」政策的決心。', imageUri:'/image/political2.jpeg'},
+    {id:2, date:'12/20', title:'收容所模特兒大比拼！', content:'今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！', imageUri:'/image/political3.jpeg'},
+]
+
+function timelineContent(){
+    return politicalList.map((item, index) => {
+        return(
+        <TimelineItem key={item}>
+            <TimelineSeparator>
+                <TimelineDot />
+                <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>
+                <div className="flex justify-center items-center text-black">
+                    <Image alt='political1' src={item.imageUri} width={200} height={40} />
+                    <div>
+                        <p>{item.date}</p>
+                        <p>{item.title}</p>
+                        <p>{item.content}</p>
+                    </div>
+                </div>
+            </TimelineContent>
+        </TimelineItem>
+        )
+    })
+}
+
+function News() {
+  return (
+    <main className="bg-[#EFE4DE] h-screen">
+      <Header category='news' />
+      <div className="w-[70%] flex justify-center items-center">
+        <Timeline
+        sx={{
+            [`& .${timelineItemClasses.root}:before`]: {
+            flex: 0,
+            padding: 0,
+            },
+        }}
+        >
+        {timelineContent()}
+        </Timeline>
+      </div>
+    </main>
+  )
+}
+
+export default News;
