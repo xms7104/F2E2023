@@ -69,10 +69,10 @@ function Political() {
   return (
     <main className="bg-[#EFE4DE] h-full font-mono">
       <Header category='political' />
-      <div className="flex justify-center items-center my-4 px-2 h-[80px]">
+      <div className="flex justify-center items-center my-4 px-2 h-[60px]">
         <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">政治議題</p>
       </div>
-      <div className="flex justify-center items-start text-black">
+      <div className="flex justify-center items-start text-black pb-5">
         {issueList()}
       </div>
     </main>

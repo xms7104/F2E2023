@@ -25,7 +25,7 @@ function timelineContent(){
             </TimelineSeparator>
             <TimelineContent>
                 <div className="flex justify-center items-center text-black">
-                    <Image alt='political1' src={item.imageUri} width={100} height={40} />
+                    <Image alt='politicalImage' src={item.imageUri} width={100} height={40} />
                     <div className="ml-4">
                         <p className="text-base">{item.date}</p>
                         <p className="text-base">{item.title}</p>
@@ -40,12 +40,12 @@ function timelineContent(){
 
 function News() {
   return (
-    <main className="bg-[#EFE4DE] h-screen font-mono">
+    <main className="bg-[#EFE4DE] h-full font-mono">
       <Header category='news' />
-      <div className="flex justify-center items-center my-4 px-2 h-[80px]">
+      <div className="flex justify-center items-center my-4 px-2 h-[60px]">
         <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">最新活動</p>
       </div>
-      <div className="w-1/2 flex justify-center items-center my-0 mx-auto">
+      <div className="w-1/2 flex justify-center items-center my-0 mx-auto pb-5">
         <Timeline
         sx={{
             [`& .${timelineItemClasses.root}:before`]: {
