@@ -21,7 +21,7 @@ function Home() {
 
       <div className="w-full h-64" 
       style={{ 
-        backgroundImage: `url('/image/banner.jpg')`, 
+        backgroundImage: `url('/image/banner.png')`, 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center' }}

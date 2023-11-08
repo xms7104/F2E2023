@@ -18,18 +18,18 @@ const politicalList = [
 function timelineContent(){
     return politicalList.map((item, index) => {
         return(
-        <TimelineItem key={item}>
-            <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
+        <TimelineItem key={item} className="px-2 py-2">
+            <TimelineSeparator className="mr-2">
+                <TimelineDot className="bg-orange-950" />
+                <TimelineConnector className="bg-orange-950" />
             </TimelineSeparator>
             <TimelineContent>
                 <div className="flex justify-center items-center text-black">
-                    <Image alt='political1' src={item.imageUri} width={200} height={40} />
-                    <div>
-                        <p>{item.date}</p>
-                        <p>{item.title}</p>
-                        <p>{item.content}</p>
+                    <Image alt='political1' src={item.imageUri} width={100} height={40} />
+                    <div className="ml-4">
+                        <p className="text-base">{item.date}</p>
+                        <p className="text-base">{item.title}</p>
+                        <p className="text-sm text-justify">{item.content}</p>
                     </div>
                 </div>
             </TimelineContent>
@@ -40,9 +40,12 @@ function timelineContent(){
 
 function News() {
   return (
-    <main className="bg-[#EFE4DE] h-screen">
+    <main className="bg-[#EFE4DE] h-screen font-mono">
       <Header category='news' />
-      <div className="w-[70%] flex justify-center items-center">
+      <div className="flex justify-center items-center my-4 px-2 h-[80px]">
+        <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">最新活動</p>
+      </div>
+      <div className="w-1/2 flex justify-center items-center my-0 mx-auto">
         <Timeline
         sx={{
             [`& .${timelineItemClasses.root}:before`]: {
