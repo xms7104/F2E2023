@@ -26,7 +26,7 @@ function Header({category}) {
         })
     }
     
-    const backgroundImage = category === 'home' ? 'url("/image/headerBackground1.png")' : 'none';
+    const backgroundImage = category === 'home' ? 'url("/image/headerBackground2.png")' : 'none';
     const backgroundColor = category === 'home' ? 'transparent' : '#EFE4DE';
 
     return (
