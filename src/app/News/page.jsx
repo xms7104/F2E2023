@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
 import Header from "../header";
+import Footer from "../footer";
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -42,21 +43,24 @@ function News() {
   return (
     <main className="bg-[#EFE4DE] h-full font-mono">
       <Header category='news' />
-      <div className="flex justify-center items-center my-4 px-2 h-[60px]">
-        <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">最新活動</p>
+      <div className="mb-8">
+        <div className="flex justify-center items-center my-4 px-2 h-[60px]">
+          <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">最新活動</p>
+        </div>
+        <div className="w-1/2 flex justify-center items-center my-0 mx-auto pb-5">
+          <Timeline
+          sx={{
+              [`& .${timelineItemClasses.root}:before`]: {
+              flex: 0,
+              padding: 0,
+              },
+          }}
+          >
+          {timelineContent()}
+          </Timeline>
+        </div>
       </div>
-      <div className="w-1/2 flex justify-center items-center my-0 mx-auto pb-5">
-        <Timeline
-        sx={{
-            [`& .${timelineItemClasses.root}:before`]: {
-            flex: 0,
-            padding: 0,
-            },
-        }}
-        >
-        {timelineContent()}
-        </Timeline>
-      </div>
+      <Footer />
     </main>
   )
 }

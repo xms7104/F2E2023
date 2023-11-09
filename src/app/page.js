@@ -7,14 +7,15 @@ function Home() {
 
       <div className="font-momo text-[#447FB3] font-bold text-3xl"
       style={{ 
-        backgroundImage: `url('/image/headerBackground.png')`, 
+        backgroundImage: `url('/image/headerBackground1.png')`, 
+        // backgroundColor: '#A8BDC7',
         backgroundSize: 'cover', 
         backgroundPosition: 'center' }}
       >
-        <p className="flex justify-center items-center px-2 pt-4 pb-2">
+        <p className="flex justify-center items-center px-2 pb-2 h-[100px]">
           台灣的未來，喵先鋪路！
         </p>
-        <p className="flex justify-center items-center px-2 py-2">
+        <p className="flex justify-center items-center px-2 py-2 mb-0 h-[50px]">
           為喵星人，護台灣！
         </p>
       </div>

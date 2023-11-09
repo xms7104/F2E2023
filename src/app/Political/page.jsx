@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
 import Header from "../header";
+import Footer from "../footer";
 import Image from 'next/image';
 
 function Political() {
@@ -58,7 +59,7 @@ function Political() {
                         <br />
                     </div>
                     <div className="flex justify-center items-start">
-                        <ul className="w-[90%] grid justify-start items-start my-auto mx-0 text-justify bg-[#FFE4E1] px-4 py-4 border-[1px] border-solid border-orange-950 rounded-[10px]">
+                        <ul className="w-[90%] h-[400px] grid justify-start items-start my-auto mx-0 text-justify bg-[#FFE4E1] px-4 py-4 border-[1px] border-solid border-orange-950 rounded-[10px]">
                             {issueContent()}
                         </ul>
                     </div>
@@ -75,6 +76,7 @@ function Political() {
       <div className="flex justify-center items-start text-black pb-5">
         {issueList()}
       </div>
+      <Footer />
     </main>
   )
 }
