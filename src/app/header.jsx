@@ -1,8 +1,12 @@
-import React from 'react';
+'use client';
+import React, {useState} from 'react';
 import Link from "next/link";
 import Image from 'next/image';
+import CloseButton from 'react-bootstrap/CloseButton';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header({category}) {
+    const [mobileMune, setMobileMenu] = useState(false);
     const title = [
         {id:0, title:'最新活動', uri:'/News', category:'news'}, 
         {id:1, title:'政治議題', uri:'/Political', category:'political'}, 
@@ -30,13 +34,29 @@ function Header({category}) {
     const backgroundColor = category === 'home' ? 'transparent' : '#EFE4DE';
 
     return (
-        <div className='flex justify-around items-center w-full py-4 px-4'
+        <div className='flex justify-around items-center w-full py-4 px-4 sm:relative'
         style={{ 
             backgroundImage, 
             backgroundColor,
             backgroundSize: 'cover', 
             backgroundPosition: 'center' }}
         >
+            <div className='md:hidden sm:absolute sm:top-[35%] sm:left-[5%]'>
+                <button className='text-xl' onClick={() => {setMobileMenu(true);}}>
+                    ☰
+                </button>
+            </div>
+            {mobileMune ? (
+                <div className='block justify-center items-center font-serif text-black absolute bg-[#EFE4DE] top-0 left-0 w-[300px] h-screen block'>
+                <div className='flex justify-center items-center relative h-[80px] w-full'>
+                    <p className='flex justify-center items-center mb-0'>喵立翰 MIAO LI - HAN</p>
+                    <CloseButton className='absolute top-[32%] right-[3%]' onClick={() => {setMobileMenu(false);}} />
+                </div>
+                <div className='grid justify-center items-center font-serif text-black h-[250px]'>
+                    {titleList()}
+                </div>
+                </div>
+            ) : null}
             <Link href='/' className='no-underline text-orange-950'>
                 <div className='flex justify-center items-center font-serif text-black px-2 py-2'>
                     {
@@ -48,7 +68,7 @@ function Header({category}) {
                     <p className='flex justify-center items-center mb-0'>MIAO LI - HAN</p>
                 </div>
             </Link>
-            <div className='flex justify-center items-center font-serif text-black'>
+            <div className='lg:flex md:flex sm:hidden justify-center items-center font-serif text-black'>
                 {titleList()}
             </div>
         </div>
