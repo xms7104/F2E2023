@@ -56,16 +56,16 @@ function Political() {
                 })
             }
             return(
-                <div key={item.title} className="flex w-[90%] px-4 py-4 bg-[#EFE4DE]">
-                    <div className="block relative">
-                        <div className="flex justify-center items-start absolute">
-                            <Image alt='political1' src={item.image} width={100} height={40} />
-                        </div>
-                        <div className="text-start">
-                            <p className="font-semibold text-base xl:h-auto lg:h-[30px]">{item.title}</p>
+                <div key={item.title} className="w-full mx-auto my-0 bg-[#EFE4DE] mb-4">
+                    <div className="block">
+                        <div className="text-center">
+                            <p className="font-semibold text-lg xl:h-auto lg:h-[30px]">{item.title}</p>
                         </div>
                         <div className="flex justify-center items-start">
-                            <ul className="w-[90%] xl:h-[60vh] grid justify-start items-start my-auto mx-0 text-justify bg-[#FFE4E1] px-4 py-4 border-[1px] border-solid border-orange-950 rounded-[10px]">
+                            <ul className="relative w-[70%] block my-auto mx-0 text-justify bg-[#FFE4E1] px-4 py-4 border-[1px] border-solid border-orange-950 rounded-[10px]">
+                                <div className="absolute right-[-30px] top-[-60px]">
+                                    <Image alt='political1' src={item.image} width={120} height={40} />
+                                </div>
                                 {issueContent()}
                             </ul>
                         </div>
@@ -85,7 +85,7 @@ function Political() {
                                 {indexText+1}. {' '}
                                 {itemText.subTitle}
                             </p>
-                            <p className="text-sm">
+                            <p className="text-sm text-justify">
                                 {itemText.content}
                             </p>
                         </li>
@@ -96,13 +96,11 @@ function Political() {
                 <SwiperSlide key={item.id}>
                     <Card 
                     className="mx-auto my-0" 
-                    style={{ width: '18rem', backgroundColor:'#EFE4DE', borderRadius:'10px', borderCcolor: 'rgb(67 20 7)', border: '1px', borderStyle:'solid' }}>
-                    <Card.Img variant="top" src={item.image} />
+                    style={{ width: '22rem', backgroundColor:'#EFE4DE', borderRadius:'10px', borderCcolor: 'rgb(67 20 7)', border: '1px', borderStyle:'solid' }}>
+                    <Card.Img variant="top" src={item.image} style={{width:'70%', margin:'0 auto'}} />
                     <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>
-                        {issueText()}
-                    </Card.Text>
+                    {issueText()}
                     </Card.Body>
                 </Card>
                 </SwiperSlide>
