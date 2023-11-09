@@ -3,6 +3,12 @@ import React from "react";
 import Header from "../header";
 import Footer from "../footer";
 import Image from 'next/image';
+import Card from 'react-bootstrap/Card';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 function Political() {
     const issueData = [
@@ -37,7 +43,7 @@ function Political() {
             function issueContent(){
                 return item.text.map((itemText, indexText) => {
                     return(
-                        <li key={itemText.subTitle} className="min-h-[100px] mb-4">
+                        <li key={itemText.subTitle} className="mb-4">
                             <p className="flex justify-start items-center">
                                 {indexText+1}. {' '}
                                 {itemText.subTitle}
@@ -50,20 +56,56 @@ function Political() {
                 })
             }
             return(
-                <div key={item.title} className="grid justify-center items-center w-[30%] px-4 py-4 bg-[#EFE4DE]">
-                    <div className="flex justify-center items-start">
-                        <Image alt='political1' src={item.image} width={180} height={40} />
-                    </div>
-                    <div className="text-center">
-                        <p className="font-semibold text-base">{item.title}</p>
-                        <br />
-                    </div>
-                    <div className="flex justify-center items-start">
-                        <ul className="w-[90%] h-[400px] grid justify-start items-start my-auto mx-0 text-justify bg-[#FFE4E1] px-4 py-4 border-[1px] border-solid border-orange-950 rounded-[10px]">
-                            {issueContent()}
-                        </ul>
+                <div key={item.title} className="flex w-[90%] px-4 py-4 bg-[#EFE4DE]">
+                    <div className="block relative">
+                        <div className="flex justify-center items-start absolute">
+                            <Image alt='political1' src={item.image} width={100} height={40} />
+                        </div>
+                        <div className="text-start">
+                            <p className="font-semibold text-base xl:h-auto lg:h-[30px]">{item.title}</p>
+                        </div>
+                        <div className="flex justify-center items-start">
+                            <ul className="w-[90%] xl:h-[60vh] grid justify-start items-start my-auto mx-0 text-justify bg-[#FFE4E1] px-4 py-4 border-[1px] border-solid border-orange-950 rounded-[10px]">
+                                {issueContent()}
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            )
+        })
+    }
+
+    function issueCard(){
+        return issueData.map((item, index) => {
+            function issueText(){
+                return item.text.map((itemText, indexText) => {
+                    return(
+                        <li key={itemText.subTitle} className="my-4">
+                            <p className="flex justify-start items-center">
+                                {indexText+1}. {' '}
+                                {itemText.subTitle}
+                            </p>
+                            <p className="text-sm">
+                                {itemText.content}
+                            </p>
+                        </li>
+                    )
+                })
+            }
+            return(
+                <SwiperSlide key={item.id}>
+                    <Card 
+                    className="mx-auto my-0" 
+                    style={{ width: '18rem', backgroundColor:'#EFE4DE', borderRadius:'10px', borderCcolor: 'rgb(67 20 7)', border: '1px', borderStyle:'solid' }}>
+                    <Card.Img variant="top" src={item.image} />
+                    <Card.Body>
+                    <Card.Title>{item.title}</Card.Title>
+                    <Card.Text>
+                        {issueText()}
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+                </SwiperSlide>
             )
         })
     }
@@ -73,9 +115,20 @@ function Political() {
       <div className="flex justify-center items-center my-4 px-2 h-[60px]">
         <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">政治議題</p>
       </div>
-      <div className="flex justify-center items-start text-black pb-5">
+      <div className="lg:block md:block sm:hidden justify-center items-start text-black pb-5">
         {issueList()}
       </div>
+      <div className="lg:hidden md:hidden sm:block sm:mb-8">
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {issueCard()}
+          </Swiper>
+        </div>
       <Footer />
     </main>
   )

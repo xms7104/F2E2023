@@ -34,14 +34,14 @@ function Header({category}) {
     const backgroundColor = category === 'home' ? 'transparent' : '#EFE4DE';
 
     return (
-        <div className='flex justify-around items-center w-full py-4 px-4 sm:relative'
+        <div className='flex justify-around items-center w-full py-4 px-4 md:relative sm:relative'
         style={{ 
             backgroundImage, 
             backgroundColor,
             backgroundSize: 'cover', 
             backgroundPosition: 'center' }}
         >
-            <div className='md:hidden sm:absolute sm:top-[35%] sm:left-[5%]'>
+            <div className='lg:hidden md:absolute md:top-[35%] md:left-[5%] sm:absolute sm:top-[35%] sm:left-[5%]'>
                 <button className='text-xl' onClick={() => {setMobileMenu(true);}}>
                     ☰
                 </button>
@@ -68,7 +68,7 @@ function Header({category}) {
                     <p className='flex justify-center items-center mb-0'>MIAO LI - HAN</p>
                 </div>
             </Link>
-            <div className='lg:flex md:flex sm:hidden justify-center items-center font-serif text-black'>
+            <div className='lg:flex md:hidden sm:hidden justify-center items-center font-serif text-black'>
                 {titleList()}
             </div>
         </div>

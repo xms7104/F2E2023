@@ -2,13 +2,20 @@
 import React from "react";
 import Header from "../header";
 import Footer from "../footer";
+import Card from 'react-bootstrap/Card';
+import Image from 'next/image';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 
 const politicalList = [
     {id:0, date:'12/26', title:'參與台北寵物論壇，爭取貓咪友善環境', content:'炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的 VIP 休憩空間。', imageUri:'/image/political1.jpeg'},
@@ -39,6 +46,31 @@ function timelineContent(){
     })
 }
 
+function politicalCard(){
+  return politicalList.map((item,index) => {
+    return(
+      <SwiperSlide key={item.id}>
+        <Card className="mx-auto my-0" style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={item.imageUri} />
+        <Card.Body>
+          <Card.Title>
+            <p>
+              {item.date}
+            </p>
+            <p>
+              {item.title}
+            </p>
+          </Card.Title>
+          <Card.Text>
+            {item.content}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </SwiperSlide>
+    )
+  })
+}
+
 function News() {
   return (
     <main className="bg-[#EFE4DE] h-full font-mono">
@@ -47,7 +79,7 @@ function News() {
         <div className="flex justify-center items-center my-4 px-2 h-[60px]">
           <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">最新活動</p>
         </div>
-        <div className="w-1/2 flex justify-center items-center my-0 mx-auto pb-5">
+        <div className="lg:w-1/2 md:w-[90%] sm:hidden md:block lg:block flex justify-center items-center my-0 mx-auto pb-5">
           <Timeline
           sx={{
               [`& .${timelineItemClasses.root}:before`]: {
@@ -58,6 +90,17 @@ function News() {
           >
           {timelineContent()}
           </Timeline>
+        </div>
+        <div className="lg:hidden md:hidden sm:block">
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {politicalCard()}
+          </Swiper>
         </div>
       </div>
       <Footer />
