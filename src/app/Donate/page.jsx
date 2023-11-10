@@ -26,7 +26,7 @@ function Donate() {
             return(
                 <div 
                 key={item.id+'_'+item.title} 
-                className="cursor-pointer flex md:justify-between md:items-center xl:w-[32rem] md:w-[30rem] md:h-[50px] sm:w-full sm:h-auto px-2 py-2 border-[1px] border-orange-950 rounded-md mb-4" 
+                className="cursor-pointer flex md:justify-between sm:justify-center items-center xl:w-[32rem] md:w-[30rem] md:h-[50px] sm:w-full sm:h-auto px-2 py-2 border-[1px] border-orange-950 rounded-md mb-4" 
                 style={{color:text, backgroundColor:bgColor}}
                 onClick={() => {
                     if(dollar === item.dollar){
