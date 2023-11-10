@@ -81,11 +81,11 @@ function Political() {
                 return item.text.map((itemText, indexText) => {
                     return(
                         <li key={itemText.subTitle} className="my-4">
-                            <p className="flex justify-start items-center">
+                            <p className="flex justify-start items-center mb-0">
                                 {indexText+1}. {' '}
                                 {itemText.subTitle}
                             </p>
-                            <p className="text-sm text-justify">
+                            <p className="text-sm text-justify mb-0">
                                 {itemText.content}
                             </p>
                         </li>
@@ -96,10 +96,10 @@ function Political() {
                 <SwiperSlide key={item.id}>
                     <Card 
                     className="mx-auto my-0" 
-                    style={{ width: '22rem', backgroundColor:'#EFE4DE', borderRadius:'10px', borderCcolor: 'rgb(67 20 7)', border: '1px', borderStyle:'solid' }}>
+                    style={{ width: '22rem', height:'43rem', backgroundColor:'#EFE4DE', borderRadius:'10px', borderCcolor: 'rgb(67 20 7)', border: '1px', borderStyle:'solid' }}>
                     <Card.Img variant="top" src={item.image} style={{width:'70%', margin:'0 auto'}} />
                     <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
+                    <Card.Title className="mb-0">{item.title}</Card.Title>
                     {issueText()}
                     </Card.Body>
                 </Card>
