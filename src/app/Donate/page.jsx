@@ -21,18 +21,35 @@ function Donate() {
 
     function donateOption(){
         return donateList.map((item) => {
+            let text = dollar !== item.dollar ? '#431407' : '#EFE4DE';
+            let bgColor = dollar !== item.dollar ? '#EFE4DE' : '#431407';
             return(
-                <div key={item.id+'_'+item.title} className="flex justify-between items-center xl:w-[32rem] md:w-[30rem] h-[50px] px-2 py-2 border-[1px] border-orange-950 rounded-md mb-4" onClick={() => {setDollar(item.dollar)}}>
-                    <p className="xl:w-[40%] md:w-[35%] flex justify-start items-center mb-0">
-                        {item.title}
-                    </p>
-                    <div className="flex justify-between items-center xl:w-[60%] md:w-[65%]">
-                        <p className="xl:w-[55%] md:w-[50%] flex justify-start items-center mb-0">
-                            {item.dollarText}
+                <div 
+                key={item.id+'_'+item.title} 
+                className="cursor-pointer flex md:justify-between md:items-center xl:w-[32rem] md:w-[30rem] md:h-[50px] sm:w-full sm:h-auto px-2 py-2 border-[1px] border-orange-950 rounded-md mb-4" 
+                style={{color:text, backgroundColor:bgColor}}
+                onClick={() => {
+                    if(dollar === item.dollar){
+                        setDollar(0);
+                    }else{
+                        setDollar(item.dollar);
+                    }
+                }}>
+                    <div className="sm:flex md:hidden sm:w-[180px] justify-center md:items-center">
+                        <Image src='/image/DonateIcon.png' alt="DonateIcon" width={100} height={40} />
+                    </div>
+                    <div>
+                        <p className="xl:w-[40%] md:w-[35%] lg:auto flex justify-start items-center mb-0">
+                            {item.title}
                         </p>
-                        <p className="xl:w-[45%] md:w-[50%] flex justify-start items-center mb-0">
-                            {item.subtitle}
-                        </p>
+                        <div className="md:flex md:justify-between md:items-center sm:block xl:w-[60%] md:w-[65%]">
+                            <p className="xl:w-[55%] md:w-[50%] flex justify-start items-center mb-0">
+                                {item.dollarText}
+                            </p>
+                            <p className="xl:w-[45%] md:w-[50%] sm:w-[180px] flex justify-start items-center mb-0">
+                                {item.subtitle}
+                            </p>
+                        </div>
                     </div>
                 </div>
             )
@@ -46,8 +63,8 @@ function Donate() {
         <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">小額捐款</p>
       </div>
       <div className="xl:h-screen lg:h-full">
-        <div className="text-black lg:flex md:block items-center w-[90%] mx-auto my-0 pt-8">
-            <div className="xl:w-[65%] md:w-full grid justify-center items-center">
+        <div className="lg:flex md:block items-center w-[90%] mx-auto my-0 lg:pt-8 sm:pt-0 md:pt-0">
+            <div className="xl:w-[65%] md:w-full md:grid sm:flex sm:flex-wrap justify-center items-center">
                 {donateOption()}
                 <div className="grid justify-between items-center h-[120px] px-4 py-4 border-[1px] border-orange-950 rounded-md mb-4">
                 <p className="mb-2">自訂贊助金額</p>
