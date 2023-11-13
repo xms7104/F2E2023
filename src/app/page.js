@@ -3,15 +3,17 @@ import Header from "./header";
 
 function Home() {
   return (
-    <main className="bg-[#EFE4DE] lg:h-screen md:h-full">
+    // <main className="bg-[#EFE4DE] lg:h-screen md:h-full" 
+    <main
+    style={{ 
+      height:'100vh',
+      backgroundImage: `url('/image/banner.png')`, 
+      backgroundSize: 'cover', 
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center' }}>
       <Header category='home' />
 
-      <div className="font-momo text-[#447FB3] font-bold lg:text-3xl dm:text-lg"
-      style={{ 
-        backgroundImage: `url('/image/headerBackground1.png')`,
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center' }}
-      >
+      <div className="font-momo text-[#447FB3] font-bold lg:text-3xl dm:text-lg">
         <p className="flex justify-center items-center px-2 md:pb-2 md:pb-0 md:h-[100px] md:h-[50px]">
           台灣的未來，喵先鋪路！
         </p>
@@ -19,16 +21,7 @@ function Home() {
           為喵星人，護台灣！
         </p>
       </div>
-
-      <div className="w-full h-64" 
-      style={{ 
-        backgroundImage: `url('/image/banner.png')`, 
-        backgroundSize: 'cover', 
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center' }}
-      >
-      </div>
-
+      <div className="h-[40%]"></div>
       <div className="w-full xl:h-[300px] lg:h-[350px] md:pb-8 lg:flex md:grid lg:justify-between md:justify-center lg:items-center md:items-start lg:items-center text-black px-4 py-2 bg-[#EFE4DE] md:mt-8">
         <div className="lg:w-1/2 md:w-full grid justify-center items-center text-black font-serif">
           <p className="text-3xl font-semibold flex justify-center items-center px-2 py-2">喵立翰</p>
