@@ -50,18 +50,16 @@ function politicalCard(){
   return politicalList.map((item,index) => {
     return(
       <SwiperSlide key={item.id}>
-        <Card className="mx-auto my-0" style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={item.imageUri} />
+        <Card className="mx-auto my-0" style={{ width: '20rem', backgroundColor:'transparent', marginBottom:'16px', height:'32rem' }}>
+        <Card.Img variant="top" src={item.imageUri} style={{width:'250px', margin:'0 auto', marginTop:'20px'}} />
         <Card.Body>
-          <Card.Title>
-            <p>
+          <Card.Title className="text-base">
               {item.date}
-            </p>
-            <p>
+            <p className="text-base mb-0">
               {item.title}
             </p>
           </Card.Title>
-          <Card.Text>
+          <Card.Text className="text-sm text-justify">
             {item.content}
           </Card.Text>
         </Card.Body>

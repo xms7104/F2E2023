@@ -17,7 +17,7 @@ function Mail() {
           分享您的想法，一同為我們的未來打造更美好！
           </p>
         </div>
-        <div className="px-4 py-4 border-2 border-solid border-orange-950 w-[40%] mx-auto my-0 rounded-[10px]">
+        <div className="px-4 py-4 border-2 border-solid border-orange-950 md:w-[60%] lg:w-[50%] xl:w-[40%] mx-auto my-0 rounded-[10px] sm:w-[80%]">
           <div className="text-orange-950 my-2">
             <p className="mb-2">您的姓名：</p>
             <input type="text" className="w-full px-2 py-2 mb-2 rounded-md" />

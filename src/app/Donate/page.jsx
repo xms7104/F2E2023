@@ -35,10 +35,10 @@ function Donate() {
                         setDollar(item.dollar);
                     }
                 }}>
-                    <div className="sm:flex md:hidden sm:w-[180px] justify-center md:items-center">
+                    <div className="sm:flex md:hidden sm:w-[180px] justify-start md:items-center">
                         <Image src='/image/DonateIcon.png' alt="DonateIcon" width={100} height={40} />
                     </div>
-                    <div>
+                    <div className="md:flex md:justify-center md:items-center md:w-full">
                         <p className="xl:w-[40%] md:w-[35%] lg:auto flex justify-start items-center mb-0">
                             {item.title}
                         </p>
@@ -66,12 +66,19 @@ function Donate() {
         <div className="lg:flex md:block items-center w-[90%] mx-auto my-0 lg:pt-8 sm:pt-0 md:pt-0">
             <div className="xl:w-[65%] md:w-full md:grid sm:flex sm:flex-wrap justify-center items-center">
                 {donateOption()}
-                <div className="grid justify-between items-center h-[120px] px-4 py-4 border-[1px] border-orange-950 rounded-md mb-4">
-                <p className="mb-2">自訂贊助金額</p>
-                <div className="flex justify-start items-center bg-white border-[1px] border-solid border-orange-950 rounded-md px-2 py-2 mb-2">
-                    <p className="mb-0">NT$</p>
-                    <input type="text" className="bg-transparent ml-2 focus:border-transparent focus:outline-none" value={dollar} onChange={(e) => {setDollar(e.target.value)}}  />
-                </div>
+                <div className="md:grid lg:grid xl:grid sm:flex justify-between items-center h-[120px] md:px-4 md:py-4 border-[1px] border-orange-950 rounded-md mb-4 sm:w-full sm:px-2 sm:py-2">
+                    <div className="sm:flex sm:justify-between sm:items-center sm:w-[80%] sm:mx-auto sm:my-0 md:w-full lg:w-full xl:w-full">
+                        <div className="sm:flex md:hidden sm:w-[180px] justify-start md:items-center sm:w-[50%]">
+                            <Image src='/image/DonateIcon.png' alt="DonateIcon" width={100} height={40} />
+                        </div>
+                        <div className="sm:block md:grid md:w-[28rem] md:justify-between md:items-center sm:w-[50%]">
+                            <p className="mb-2">自訂贊助金額</p>
+                            <div className="flex justify-start items-center bg-white border-[1px] border-solid border-orange-950 rounded-md px-2 py-2 mb-2">
+                                <p className="mb-0">NT$</p>
+                                <input type="text" className="bg-transparent ml-2 focus:border-transparent focus:outline-none" value={dollar} onChange={(e) => {setDollar(e.target.value)}}  />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="w-[16px]"></div>
@@ -117,7 +124,7 @@ function Donate() {
             </p>
         </div>
         <div className="text-orange-950">
-            <p className="flex justify-center items-center text-2xl font-bold pb-4">
+            <p className="flex justify-center items-center text-2xl font-bold pb-4 sm:text-sm">
                 您的小筆捐款，是每隻毛孩未來的大大動力！
             </p>
         </div>

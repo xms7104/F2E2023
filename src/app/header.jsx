@@ -47,7 +47,7 @@ function Header({category}) {
                 </button>
             </div>
             {mobileMune ? (
-                <div className='z-10 font-serif text-black absolute bg-[#EFE4DE] top-0 left-0 w-[300px] h-screen block'>
+                <div className='z-10 font-serif text-black fixed bg-[#EFE4DE] top-0 left-0 bottom-0 w-[300px] h-screen block border-t-[1px] border-b-[1px] border-r-[1px] border-solid border-orange-950'>
                 <div className='flex justify-center items-center relative h-[80px] w-full'>
                     <p className='flex justify-center items-center mb-0'>喵立翰 MIAO LI - HAN</p>
                     <CloseButton className='absolute top-[32%] right-[3%]' onClick={() => {setMobileMenu(false);}} />
