@@ -14,7 +14,7 @@ function Home() {
       <Header category='home' />
 
       <div className="font-momo text-[#447FB3] font-bold lg:text-3xl dm:text-lg">
-        <p className="flex justify-center items-center px-2 text-black md:pb-2 md:pb-0 md:h-[100px] md:h-[50px] sm:text-[28px]">
+        <p className="flex justify-center items-center px-2 text-black md:pb-2 md:pb-0 md:h-[100px] md:h-[50px] sm:text-[28px] mt-[10px]">
           台灣的未來，喵先鋪路！
         </p>
         <p className="flex justify-center items-center px-2 py-2 text-black mb-0 md:pb-0 h-[50px] sm:text-[28px]">

@@ -17,7 +17,7 @@ function Header({category}) {
     ];
 
     function titleList(){
-        return title.map((item, index) => {
+        return title.map((item) => {
             let imgPath = category === item.category || isHovered === item.category ? '/image/focusIcon.png' : '/image/titleIcon.png';
             return(
                 <Link key={item.id} href={item.uri} className='no-underline text-orange-950'>
