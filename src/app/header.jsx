@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header({category}) {
     const [mobileMune, setMobileMenu] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+
     const title = [
         {id:0, title:'最新活動', uri:'/News', category:'news'}, 
         {id:1, title:'政治議題', uri:'/Political', category:'political'}, 
@@ -16,10 +18,13 @@ function Header({category}) {
 
     function titleList(){
         return title.map((item, index) => {
-            let imgPath = category === item.category ? '/image/focusIcon.png' : '/image/titleIcon.png';
+            let imgPath = category === item.category || isHovered === item.category ? '/image/focusIcon.png' : '/image/titleIcon.png';
             return(
                 <Link key={item.id} href={item.uri} className='no-underline text-orange-950'>
-                    <div className='flex justify-center items-center'>
+                    <div className='flex justify-center items-center'
+                     onMouseEnter={() => setIsHovered(item.category)}
+                     onMouseLeave={() => setIsHovered(null)}
+                    >
                         <Image alt='titleIcon' src={imgPath} width={40} height={40} />
                         <p className='font-serif px-2 py-2 cursor-pointer mb-0'>
                             {item.title}
