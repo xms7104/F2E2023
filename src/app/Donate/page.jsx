@@ -158,7 +158,7 @@ function Donate() {
                             <p className="mb-2" style={{ color: donateTitle === 'other' ? textChange : '#431407' }}>自訂贊助金額</p>
                             <div className="flex justify-start items-center bg-white border-[1px] border-solid border-orange-950 rounded-md px-2 py-2 mb-2">
                                 <p className="mb-0">NT$</p>
-                                <input type="number" className="bg-transparent ml-2 focus:border-transparent focus:outline-none" value={dollar} onChange={(e) => {setDollar(e.target.value); setDonateTitle('other');}}  />
+                                <input type="number" className="bg-transparent ml-2 focus:border-transparent focus:outline-none sm:w-full" value={dollar} onChange={(e) => {setDollar(e.target.value); setDonateTitle('other');}}  />
                             </div>
                         </div>
                     </div>

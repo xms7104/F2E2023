@@ -13,17 +13,17 @@ function Home() {
       <Header category='home' />
 
       <div className="font-momo text-[#447FB3] font-bold lg:text-3xl dm:text-lg">
-        <p className="flex justify-center items-center px-2 md:pb-2 md:pb-0 md:h-[100px] md:h-[50px]">
+        <p className="flex justify-center items-center px-2 md:pb-2 md:pb-0 md:h-[100px] md:h-[50px] sm:text-[28px]">
           台灣的未來，喵先鋪路！
         </p>
-        <p className="flex justify-center items-center px-2 py-2 mb-0 md:pb-0 h-[50px]">
+        <p className="flex justify-center items-center px-2 py-2 mb-0 md:pb-0 h-[50px] sm:text-[28px]">
           為喵星人，護台灣！
         </p>
       </div>
       <div className="h-[40%]"></div>
       <div className="w-full xl:h-[300px] lg:h-[350px] md:pb-8 lg:flex md:grid lg:justify-between md:justify-center lg:items-center md:items-start lg:items-center text-black px-4 py-2 bg-[#EFE4DE] md:mt-8">
         <div className="lg:w-1/2 md:w-full grid justify-center items-center text-black font-serif">
-          <p className="text-3xl font-semibold flex justify-center items-center px-2 py-2">喵立翰</p>
+          <p className="text-3xl font-semibold flex justify-center items-center px-2 py-2 sm:text-[28px]">喵立翰</p>
           <p className="text-base px-2 py-2 flex justify-center items-center">MIAO LI - HAN</p>
           <p className="text-base px-1 py-1 flex justify-center items-center">立法委員候選人</p>
         </div>
