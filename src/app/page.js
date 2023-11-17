@@ -3,7 +3,6 @@ import Header from "./header";
 
 function Home() {
   return (
-    // <main className="bg-[#EFE4DE] lg:h-screen md:h-full" 
     <main
     style={{ 
       height:'100vh',
