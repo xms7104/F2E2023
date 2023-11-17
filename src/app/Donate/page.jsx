@@ -54,10 +54,10 @@ function Donate() {
                         setDollar(item.dollar);
                     }
                 }}>
-                    <div className="sm:flex md:hidden sm:w-[180px] justify-start md:items-center">
+                    <div className="sm:flex md:hidden sm:w-[50%] justify-start md:items-center sm:justify-center">
                         <Image src='/image/DonateIcon.png' alt="DonateIcon" width={100} height={40} />
                     </div>
-                    <div className="md:flex md:justify-center md:items-center md:w-full">
+                    <div className="md:flex md:justify-center md:items-center md:w-full sm:w-[50%]">
                         <p className="xl:w-[40%] md:w-[35%] lg:auto flex justify-start items-center mb-0">
                             {item.title}
                         </p>
@@ -150,13 +150,13 @@ function Donate() {
                 className="md:grid lg:grid xl:grid sm:flex justify-between items-center h-[120px] md:px-4 md:py-4 border-[1px] border-orange-950 rounded-md mb-4 sm:w-full sm:px-2 sm:py-2"
                 style={{backgroundColor:donateTitle === 'other' ? bgColorChange : '#EFE4DE'}}
                 >
-                    <div className="sm:flex sm:justify-between sm:items-center sm:w-[80%] sm:mx-auto sm:my-0 md:w-full lg:w-full xl:w-full">
-                        <div className="sm:flex md:hidden sm:w-[180px] justify-start md:items-center sm:w-[50%]">
+                    <div className="sm:flex sm:justify-between sm:items-center sm:w-full sm:mx-auto sm:my-0 md:w-full lg:w-full xl:w-full">
+                        <div className="sm:flex md:hidden sm:w-[180px] justify-start md:items-center sm:w-[50%] sm:justify-center">
                             <Image src='/image/DonateIcon.png' alt="DonateIcon" width={100} height={40} />
                         </div>
                         <div className="sm:block md:grid md:w-[28rem] md:justify-between md:items-center sm:w-[50%]">
                             <p className="mb-2" style={{ color: donateTitle === 'other' ? textChange : '#431407' }}>自訂贊助金額</p>
-                            <div className="flex justify-start items-center bg-white border-[1px] border-solid border-orange-950 rounded-md px-2 py-2 mb-2">
+                            <div className="flex justify-start items-center bg-white border-[1px] border-solid border-orange-950 rounded-md px-2 py-2 mb-2 sm:w-[95%]">
                                 <p className="mb-0">NT$</p>
                                 <input type="number" className="bg-transparent ml-2 focus:border-transparent focus:outline-none sm:w-full" value={dollar} onChange={(e) => {setDollar(e.target.value); setDonateTitle('other');}}  />
                             </div>
@@ -168,7 +168,7 @@ function Donate() {
             <div className="grid lg:justify-start md:justify-center self-start">
                 <Image alt='DonateImage' src='/image/donate.png' className="sm:hidden md:hidden lg:block" width={300} height={40} />
                 <div className="flex justify-center items-end">
-                    <button className="mb-0 w-[200px] h-[35px] border-2 border-solid border-orange-950 rounded-[20px] bg-[#FFE4E1] font-semibold hover:bg-orange-950 hover:text-[#FFE4E1]" onClick={() =>{setShow(true);}}>
+                    <button className="mb-0 w-[200px] h-[35px] border-2 border-solid border-orange-950 rounded-[20px] font-semibold hover:bg-orange-950 hover:text-[#FFE4E1]" onClick={() =>{setShow(true);}}>
                         前往捐款
                     </button>
                     <Modal show={show} onHide={() =>{ setShow(false); }}>

@@ -146,7 +146,7 @@ function Mail() {
             <textarea type="text" className="w-full h-[200px] px-2 py-2 mb-2 resize-none rounded-md" value={content} onChange={(e) => {setContent(e.target.value);}} />
           </div>
           <div className="flex justify-center items-center">
-            <button className="text-orange-950 border-orange-950 font-semibold bg-[#FFE4E1] border-[1px] border-solid rounded-[20px] px-1 py-1 w-[100px] hover:text-[#FFE4E1] hover:bg-orange-950"
+            <button className="text-orange-950 border-orange-950 font-semibold border-[1px] border-solid rounded-[20px] px-1 py-1 w-[100px] hover:text-[#FFE4E1] hover:bg-orange-950"
             onClick={() => { postCheck(); }}>
               送出
             </button>
