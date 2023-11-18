@@ -61,7 +61,7 @@ function Donate() {
                         <p className="xl:w-[40%] md:w-[35%] lg:auto flex justify-start items-center mb-0">
                             {item.title}
                         </p>
-                        <div className="md:flex md:justify-between md:items-center sm:block xl:w-[60%] md:w-[65%]">
+                        <div className="md:flex md:justify-between md:items-center sm:block xl:w-[80%] md:w-[80%]">
                             <p className="xl:w-[55%] md:w-[50%] flex justify-start items-center mb-0">
                                 {item.dollarText}
                             </p>
