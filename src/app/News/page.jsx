@@ -32,8 +32,8 @@ function timelineContent(){
                 <TimelineConnector className="bg-orange-950" />
             </TimelineSeparator>
             <TimelineContent>
-                <div className="flex justify-center items-center text-black">
-                    <Image alt='politicalImage' src={item.imageUri} width={100} height={40} />
+                <div className="flex justify-start items-center text-black">
+                    <Image alt='politicalImage' src={item.imageUri} width={120} height={40} />
                     <div className="ml-4">
                         <p className="text-base">{item.date}</p>
                         <p className="text-base">{item.title}</p>
@@ -77,7 +77,7 @@ function News() {
         <div className="flex justify-center items-center my-4 px-2 h-[60px]">
           <p className="text-3xl text-orange-950 flex justify-center items-center font-semibold">最新活動</p>
         </div>
-        <div className="lg:w-1/2 md:w-[90%] sm:hidden md:block lg:block flex justify-center items-center my-0 mx-auto pb-5">
+        <div className="xl:w-[60%] lg:w-[70%] md:w-[90%] sm:hidden md:block lg:block flex justify-center items-center my-0 mx-auto pb-5">
           <Timeline
           sx={{
               [`& .${timelineItemClasses.root}:before`]: {
